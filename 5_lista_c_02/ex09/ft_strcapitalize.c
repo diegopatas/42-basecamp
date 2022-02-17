@@ -6,7 +6,7 @@
 /*   By: ddiniz <ddiniz@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 02:03:36 by ddiniz            #+#    #+#             */
-/*   Updated: 2022/02/17 04:27:08 by ddiniz           ###   ########.fr       */
+/*   Updated: 2022/02/17 14:55:19 by ddiniz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,13 +58,13 @@ char	*ft_strcapitalize(char *str)
 
 	ft_strlowcase(str);
 	i = 1;
-	if ((str[0] >= 'a') && (str[0] <= 'z') && (str[0] != '\0'))
+	if ((str[0] >= 'a') && (str[0] <= 'z'))
 	{
 		str[0] -= 32;
 	}
 	while (str[i] != '\0')
 	{
-		if ((is_low(str[i]) == 1) && (is_ant_valid(str[i - 1]) == 1))
+		if ((is_low(str[i]) == 1) && (is_ant_valid(str[i - 1]) == 1)
 		{
 			str[i] -= 32;
 		}
