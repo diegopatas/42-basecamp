@@ -1,26 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   8_main.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddiniz <ddiniz@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/15 17:48:23 by ddiniz            #+#    #+#             */
-/*   Updated: 2022/02/16 15:08:39 by ddiniz           ###   ########.fr       */
+/*   Created: 2022/02/17 01:58:28 by ddiniz            #+#    #+#             */
+/*   Updated: 2022/02/17 01:58:45 by ddiniz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdio.h>
 
-int	ft_strlen(char *str)
+char	*ft_strlowcase(char *str);
+
+int	main(void)
 {
-	int	num_str;
+	char str[] = "ankd89  7465762dKlll";
 
-	num_str = 0;
-	while (*str)
-	{
-		str++;
-		num_str++;
-	}
-	return (num_str);
+	printf("%s", ft_strlowcase(str));
 }

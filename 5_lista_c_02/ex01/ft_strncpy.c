@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddiniz <ddiniz@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/15 17:48:23 by ddiniz            #+#    #+#             */
-/*   Updated: 2022/02/16 15:08:39 by ddiniz           ###   ########.fr       */
+/*   Created: 2022/02/16 18:20:43 by ddiniz            #+#    #+#             */
+/*   Updated: 2022/02/16 21:52:16 by ddiniz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-int	ft_strlen(char *str)
+char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
-	int	num_str;
+	unsigned int	i;
 
-	num_str = 0;
-	while (*str)
+	i = 0;
+	while ((src[i] != '\0') && (i < n))
 	{
-		str++;
-		num_str++;
+		dest[i] = src[i];
+		i++;
 	}
-	return (num_str);
+	while (i < n)
+	{
+		dest[i] = '\0';
+		i++;
+	}
+	return (dest);
 }

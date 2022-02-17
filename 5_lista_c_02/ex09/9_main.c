@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   9_main.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddiniz <ddiniz@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/15 17:48:23 by ddiniz            #+#    #+#             */
-/*   Updated: 2022/02/16 15:08:39 by ddiniz           ###   ########.fr       */
+/*   Created: 2022/02/17 03:24:28 by ddiniz            #+#    #+#             */
+/*   Updated: 2022/02/17 03:39:50 by ddiniz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdio.h>
 
-int	ft_strlen(char *str)
+char	*ft_strcapitalize(char *str);
+
+int	main(void)
 {
-	int	num_str;
+	// char *str;
 
-	num_str = 0;
-	while (*str)
-	{
-		str++;
-		num_str++;
-	}
-	return (num_str);
+	char	src[] = "oi, tudo bem? 42palavras quarenta-e-duas; cinquenta+e+um";
+	// char	src[] = "meu 42nome É cassiano \n \r casa@#$@$@2";
+		// char	src[] = "A MINHA CASA ççébRANCA 1231";
+	//	char	src[] = "";
+		// char	src[] = "minhA cAsA e verde e tem1 c113aldos";	
+	
+	printf("R: %s", ft_strcapitalize(src));
 }

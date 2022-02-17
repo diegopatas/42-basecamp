@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_str_is_uppercase.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddiniz <ddiniz@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/15 17:48:23 by ddiniz            #+#    #+#             */
-/*   Updated: 2022/02/16 15:08:39 by ddiniz           ###   ########.fr       */
+/*   Created: 2022/02/17 00:51:12 by ddiniz            #+#    #+#             */
+/*   Updated: 2022/02/17 00:53:11 by ddiniz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-int	ft_strlen(char *str)
+int	ft_str_is_uppercase(char *str)
 {
-	int	num_str;
+	int	i;
 
-	num_str = 0;
-	while (*str)
+	i = 0;
+	while (str[i] != '\0')
 	{
-		str++;
-		num_str++;
+		if (!((str[i] >= 'A') && (str[i] <= 'Z')))
+		{
+			return (0);
+		}
+		i++;
 	}
-	return (num_str);
+	return (1);
 }
