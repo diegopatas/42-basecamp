@@ -6,7 +6,7 @@
 /*   By: ddiniz <ddiniz@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 20:31:35 by ddiniz            #+#    #+#             */
-/*   Updated: 2022/02/13 14:41:33 by ddiniz           ###   ########.fr       */
+/*   Updated: 2022/02/18 22:38:02 by ddiniz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ long	is_negative(long neg)
 {
 	if (neg < 0)
 	{
-		write(1, "-", 1);
 		neg = neg * -1;
 	}
 	return (neg);
@@ -38,11 +37,12 @@ void	ft_putnbr(int nb)
 	{
 		ft_print_char('0' + 0);
 	}
-	x = is_negative(x);
+	if (x < 0)
+		write(1, "-", 1);
 	i = 0;
-	while (x > 0)
+	while (x != 0)
 	{
-		to_print[i] = '0' + x % 10;
+		to_print[i] = '0' + is_negative(x % 10);
 		x /= 10;
 		i++;
 	}
@@ -51,4 +51,10 @@ void	ft_putnbr(int nb)
 		ft_print_char(to_print[i]);
 		i--;
 	}
+}
+
+int main(void)
+{
+	ft_putnbr(-2147483648);
+	return (0);
 }
