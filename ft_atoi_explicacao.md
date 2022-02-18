@@ -5,15 +5,10 @@ O que é?
 
 Procedimento
  - vejamos os casos:
-	- num positivo;
-	- num negativo;
+	- num positivo (ou seja, só numeros positivos na string)
+	- num negativo (ou seja, há um num negativo ou positivo na string)
 	- string com espacos, sinais, misturas
 
-1. atoi - alpha to int;
-2. inicio da string pode ter "whitespaces" (ver man isspace(3));
-3. pode ter -/+, se houver #impar de '-' entao o resultado é neg;
-4. base 10;
-5. overflow/ underflow???
 
 ## CASO: STRING DE UM NUM POSITIVO (ou seja, sua string tem apenas num char *str ="8478";)
 
@@ -59,8 +54,10 @@ ft_atoi_n(char *str)
 	sign = 1;
 	result = 0;
 	if (str[0] == '-')
+	{
 		sign = sign * -1;
 		i++;
+	}
 	while (str[i] != '\0')
 	{
 		result = result * 10 + (str[i] -'0');
@@ -82,11 +79,11 @@ int	main(void)
 
 Enunciado:
 
-1. while para valida o inicio da string, que pode ter "whitespaces" ver apêndice ou ver man isspace(3);
-3. While para validar qte de sinais -/+, se houver numero impar de (-), entao o resultado é neg;
-4. while para construir nosso numero a partir da base 10 (identico aos ex anteriores);
-5. overflow/ underflow??? não precisamos considerar esses casos
-6. atencao: se voce testar a str do exercicio na atoi original, vai dar zero pq ela nao faz o tratamento de --, --+, e coisas do tipo, ela considera apenas - uma vez apenas
+1. usamos um while para valida o inicio da string, que pode ter "whitespaces" ver apêndice ou ver man isspace(3);
+3. depois, usamos um while para validar qte de sinais -/+, se houver numero impar de (-), entao o resultado é neg;
+4. seguindo, usamos um while para construir nosso numero a partir da base 10 (identico aos ex anteriores);
+5. E o overflow/ underflow??? não precisamos considerar esses casos
+6. Atencao: se voce testar a str do exercicio na atoi original, vai dar zero pq ela nao faz o tratamento de --, --+, e coisas do tipo, ela considera apenas - uma vez apenas
 
 ```c
 #include <stdlib.h>
