@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   4_main.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddiniz <ddiniz@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/17 04:33:12 by ddiniz            #+#    #+#             */
-/*   Updated: 2022/02/17 18:12:46 by ddiniz           ###   ########.fr       */
+/*   Created: 2022/02/17 22:01:45 by ddiniz            #+#    #+#             */
+/*   Updated: 2022/02/17 23:53:51 by ddiniz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
-{
-	unsigned int	i;
+#include <stdio.h>
+#include <string.h>
 
-	i = 0;
-	while ((i < size) && (src[i] != '\0'))
-	{
-		dest[i] = src[i];
-			i++;
-	}
-	if (i == size)
-		dest[i - 1] = '\0';
-	i = 0;
-	while (src[i] != '\0')
-		i++;
-	return (i);
+char	*ft_strstr(char *str, char *to_find);
+
+int	main(void)
+{
+	char	*str = "Minha string teste";
+	char	*to_find = "i";
+	
+	char	*str1 = "Minha string teste";
+	char	*to_find1 = "i";
+
+	printf("R: %s\n", ft_strstr(str, to_find));
+	printf("R: %s\n", strstr(str1, to_find1));
 }

@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   2_main.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddiniz <ddiniz@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/17 04:33:12 by ddiniz            #+#    #+#             */
-/*   Updated: 2022/02/17 18:12:46 by ddiniz           ###   ########.fr       */
+/*   Created: 2022/02/17 18:56:27 by ddiniz            #+#    #+#             */
+/*   Updated: 2022/02/17 20:14:49 by ddiniz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
-{
-	unsigned int	i;
+#include <stdio.h>
+#include <string.h>
 
-	i = 0;
-	while ((i < size) && (src[i] != '\0'))
-	{
-		dest[i] = src[i];
-			i++;
-	}
-	if (i == size)
-		dest[i - 1] = '\0';
-	i = 0;
-	while (src[i] != '\0')
-		i++;
-	return (i);
+char	*ft_strcat(char *dest, char *src);
+
+int	main(void)
+{
+	char	dest[10];
+	char	*src = "teste";
+	char	fim[10];
+	char	*inic = "teste";
+	// unsigned int	n;
+
+	// n = 6;
+	printf("R: %s\n", ft_strcat(dest, src));
+	printf("R: %s\n", strcat(fim, inic));
 }
