@@ -6,7 +6,7 @@
 /*   By: ddiniz <ddiniz@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 20:31:35 by ddiniz            #+#    #+#             */
-/*   Updated: 2022/02/18 22:38:02 by ddiniz           ###   ########.fr       */
+/*   Updated: 2022/02/19 00:37:20 by ddiniz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,10 +51,4 @@ void	ft_putnbr(int nb)
 		ft_print_char(to_print[i]);
 		i--;
 	}
-}
-
-int main(void)
-{
-	ft_putnbr(-2147483648);
-	return (0);
 }

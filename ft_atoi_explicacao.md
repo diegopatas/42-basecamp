@@ -10,10 +10,11 @@ Procedimento
 	- string com espacos, sinais, misturas
 
 
-## CASO: STRING DE UM NUM POSITIVO (ou seja, sua string tem apenas num char *str ="8478";)
+## CASO: STRING DE UM NUM POSITIVO (ou seja, sua string tem apenas numeros na char *str ="8478";)
 
 ```c
 #include <stdio.h>
+#include <stdlib.h>
 
 int	ft_atoi_p(char *str)
 {
@@ -27,22 +28,24 @@ int	ft_atoi_p(char *str)
 		result = result * 10 + (str[i] - '0'); // em i=0, quanto vale result? e em i=1?
 		i++;
 	}
-	return (result);	//se str =""; quanto é o result?
+	return (result);	//se str ="", quanto é o result?
 }
 
 int	main(void)
 {
 	char *str = "8478";
 
-	printf("Retornado: %d\n", ft_atoi_p(str));
+	printf("Retornado ft_atoi: %d\n", ft_atoi_p(str));
+	printf("Retornado atoi: %d\n", atoi(str));
 	return (0);
 }
 ```
 
-## CASO: STRING DE UM NUM NEGATIVO (ou seja, char *str ="-8478";)
+## CASO: STRING DE UM NUM NEGATIVO OU POSITIVO (ou seja, char *str ="-8478"; ou str="252";)
 
 ```c
 #include <stdio.h>
+#include <stdlib.h>
 
 ft_atoi_n(char *str)
 {
@@ -68,9 +71,10 @@ ft_atoi_n(char *str)
 
 int	main(void)
 {
-	char *str = "8478";
+	char *str = "-8478";
 
-	printf("Retornado: %d\n", ft_atoi_p(str));
+	printf("Retornado ft_atoi: %d\n", ft_atoi_n(str));
+	printf("Retornado atoi: %d\n", atoi(str));
 	return (0);
 }
 ```
@@ -86,6 +90,7 @@ Enunciado:
 6. Atencao: se voce testar a str do exercicio na atoi original, vai dar zero pq ela nao faz o tratamento de --, --+, e coisas do tipo, ela considera apenas - uma vez apenas
 
 ```c
+#include <stdio.h>
 #include <stdlib.h>
 
 int	ft_atoi(char *str)
@@ -119,8 +124,8 @@ int	main(void)
 {
 	char *str = "  ---+--1243ab567";
 
-	printf("Returned: %d\n", ft_atoi(str));
-	printf("Returned: %d\n", atoi(str));
+	printf("Retornado ft_atoi: %d\n", ft_atoi(str));
+	printf("Retornado atoi: %d\n", atoi(str));    //atoi nao trata multiplos sinais, mas algo como "-25298" vai funcionar pra ambas
 }
 ```
 
